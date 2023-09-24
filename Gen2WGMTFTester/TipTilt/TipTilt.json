@@ -1,0 +1,14 @@
+{
+    "Name" : "TipTiltPlugin",
+	"PluginApplication": "true",
+    "Version" : "0.0.1",
+    "Vendor" : "MLO",
+    "Copyright" : "(C) MLO",
+    "License" : "Put short license information here",
+    "Description" : "provide tiptilt interface",
+    "Url" : "https://mloptic.com/",
+	"Dependencies" : [
+		{"Name": "ConfigurationPlugin"},
+		{"Name": "PLCControlPlugin"}
+	]
+}

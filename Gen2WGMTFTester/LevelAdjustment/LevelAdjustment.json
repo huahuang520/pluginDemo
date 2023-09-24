@@ -1,0 +1,17 @@
+{
+    "Name" : "LevelAdjustPlugin",
+	"PluginApplication": "true",
+    "Version" : "0.0.1",
+    "Vendor" : "MLO",
+    "Copyright" : "(C) MLO",
+    "License" : "Put short license information here",
+    "Description" : "Level adjustment",
+    "Url" : "https://mloptic.com/",
+	"Dependencies" : [
+		{"Name": "TipTiltPlugin"},
+		{ "Name" : "ACSPlugin"},
+		{ "Name" : "GradienterPlugin"},
+		{ "Name" : "CollimatorPlugin"},
+		{ "Name" : "ConfigurationPlugin"}
+	]
+}

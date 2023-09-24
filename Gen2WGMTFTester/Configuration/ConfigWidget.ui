@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfigWidgetClass</class>
+ <widget class="QWidget" name="ConfigWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ConfigWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="configWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="LevelAdjustConfig">
+      <attribute name="title">
+       <string>LevelAdjustConfig</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTableWidget" name="LevelAdjustTable">
+         <row>
+          <property name="text">
+           <string>Motion3D_load(X,Y,Z)</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>AngleRange</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>AdjustTimesMax</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>PulseConversionAngle_X</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>PulseConversionAngle_Y</string>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>Value1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Value2</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Value3</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

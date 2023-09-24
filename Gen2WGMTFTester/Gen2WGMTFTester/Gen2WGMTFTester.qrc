@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/Gen2WGMTFTester">
+        <file>qss/psblack.css</file>
+        <file>qss/style.qss</file>
+        <file>images/MTF/MTFsetting.png</file>
+        <file>images/MTF/LED.jpg</file>
+        <file>images/logo/mlico.png</file>
+        <file>images/logo/ShowBackground.png</file>
+        <file>images/routine/themeColor.png</file>
+        <file>images/routine/log.jpg</file>
+        <file>images/MTF/MTF.png</file>
+        <file>images/fiducial/eyeBoxScan.jpg</file>
+        <file>images/fiducial/findFiducial.png</file>
+        <file>images/routine/clear.jpg</file>
+        <file>images/routine/right_arrow.svg</file>
+        <file>images/routine/right_arrow_down.svg</file>
+        <file>images/routine/startup.png</file>
+        <file>images/routine/camera_close.png</file>
+        <file>images/routine/camera_open.png</file>
+        <file>images/routine/switch.png</file>
+        <file>images/routine/left_arrow_disabled.png</file>
+        <file>images/routine/right_arrow_disabled.png</file>
+        <file>images/motionControl/top.png</file>
+        <file>images/motionControl/right.png</file>
+        <file>images/motionControl/down.png</file>
+        <file>images/motionControl/left.png</file>
+        <file>images/motionControl/stop.png</file>
+        <file>images/motionControl/tipTilt.png</file>
+        <file>images/routine/configFile.png</file>
+        <file>images/Table/checkbox_unchecked.png</file>
+        <file>images/Table/checkbox_checked.png</file>
+        <file>images/Table/checkbox_checked_disable.png</file>
+        <file>images/Table/checkbox_parcial.png</file>
+        <file>images/Table/checkbox_parcial_disable.png</file>
+        <file>images/Table/checkbox_unchecked_disable.png</file>
+        <file>css/style.css</file>
+    </qresource>
+</RCC>

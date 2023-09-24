@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MenuWidgetClass</class>
+ <widget class="QMenuBar" name="MenuWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>703</width>
+    <height>161</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>161</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>161</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MenuWidget</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <item>
+    <widget class="QWidget" name="widgetContainer" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>161</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/**********菜单栏**********/
+QMenuBar {
+  background: rgb(255,255,255);
+  border: 1px solid rgb(255,255,255);
+  border-left: none;
+  border-right: none;
+}
+
+QMenuBar::item {
+  border: 1px solid transparent;
+  padding: 5px 10px 5px 10px;
+  background: transparent;
+}
+
+QMenuBar::item:enabled {
+  color: rgb(2, 65, 132);
+}
+
+QMenuBar::item:!enabled {
+  color: rgb(155, 155, 155);
+}
+
+QMenuBar::item:enabled:selected {
+  border-top-color: rgb(255,255,255);
+  border-bottom-color: rgb(255,255,255);
+  background: rgb(255,255,255);
+}
+
+/**********菜单**********/
+QMenu {
+  border: 1px solid rgb(255,255,255);
+  background: rgb(255,255,255);
+}
+
+QMenu::item:enabled {
+  color: rgb(84, 84, 84);
+}
+
+QMenu::item:!enabled {
+  color: rgb(155, 155, 155);
+}
+
+QMenu::item:enabled:selected {
+  color: rgb(2, 65, 132);
+  background: rgba(255, 255, 255, 200);
+}
+
+QMenu::separator {
+  height: 1px;
+  background: rgb(255,255,255);
+}
+
+
+QWidget#widgetContainer,QWidget#widgetContainer &gt; *{
+
+	background:rgb(33,115,70);
+	background:rgb(183,71,42);
+	background:rgb(79,113,164);
+
+	color:#fff;
+	font-family:'simhei';
+	font-size:11pt;
+}
+
+QTabBar#tabWidgetMenuBar{
+	background:rgb(43,87,154);
+}
+
+
+QTabBar#tabWidgetMenuBar::tab {
+      background:rgb(43,87,154);
+      min-width: 12ex;
+      padding: 2px;
+	  height:24px;
+	  padding:2px 12px;
+	  color:#fff;
+  }
+
+QTabBar#tabWidgetMenuBar::tab:selected {
+      background: rgb(243,243,243);
+	  color: rgb(10, 10, 10);
+color: rgb(10, 10, 10);
+color: rgb(43,87,154);
+
+  }
+
+QTabBar#tabWidgetMenuBar::tab:hover:!selected {
+     background:rgba(0,0,0,40);
+  }
+
+
+
+QTabBar#tabWidgetMenuBar::tab:selected {
+      border-color: #9B9B9B;
+      border-bottom-color: #C2C7CB; /* same as pane color */
+  }
+
+QTabBar#tabWidgetMenuBar::tab:!selected {
+      margin-top: 0px; /* make non-selected tabs look smaller */
+  }
+
+
+/*Qmenu Style Sheets*/
+QMenu {
+    background-color: rgb(243,243,243); /* sets background of the menu 设置整个菜单区域的背景色，我用的是白色：white*/
+    border: 1px solid rgb(226,241,250);/*整个菜单区域的边框粗细、样式、颜色*/
+
+}
+ 
+QMenu::item {
+    /* sets background of menu item. set this to something non-transparent
+        if you want menu color and menu item color to be different */
+    background-color: transparent;
+    padding:3px 25px;/*设置菜单项文字上下和左右的内边距，效果就是菜单中的条目左右上下有了间隔*/
+    margin:0px 2px;/*设置菜单项的外边距*/
+    /*border-bottom:1px solid #DBDBDB;为菜单项之间添加横线间隔*/
+	color:rgb(10,10,10);
+	font-weight:bold;
+}
+ 
+QMenu::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: rgb(177,177,177);/*这一句是设置菜单项鼠标经过选中的样式*/
+color:rgb(10,10,10);
+}
+
+
+QWidget#widgetContainer{
+	margin:0;
+	padding:0;
+}
+
+
+/*
+QTabWidget:pane,QWidget#widgetMenuBar{
+	border-bottom:1px solid rgb(224,224,224);
+}
+*/
+
+
+QWidget#widgetBottomBar{
+border-bottom:1px solid blue;
+	background:blue;
+	
+}
+
+ QTabWidget#tabWidgetMenuBar::pane { /* The tab widget frame */
+      border-top: 0px solid #eee;
+border-width:0;
+	 background: rgb(243,243,243);
+	padding:1px 1px;
+  }
+
+  QTabWidget#tabWidgetMenuBar::tab-bar {
+      left: 2px; /* move to the right by 5px */
+	/*height:32px;*/
+border-width:0;
+
+  }
+
+/*QTabWidget#tabWidgetMenuBar QTabBar {
+      background: rgb(255,0,0);
+  }*/
+
+  /* Style the tab using the tab sub-control. Note that
+      it reads QTabBar _not_ QTabWidget */
+ 
+
+
+QWidget#widgetContent{
+	background:white;
+}
+
+ QTabWidget#tabWidgetMenuBar QTabBar::tab {
+      background: transparent;
+      min-width: 12ex;
+      padding: 2px;
+	  height:30px;
+	  padding:2px 12px;
+	  color:#fff;
+border-width:0;
+  }
+
+  QTabWidget#tabWidgetMenuBar QTabBar::tab:selected {
+      background: rgb(243,243,243);
+	  color: rgb(10, 10, 10);
+color: rgb(10, 10, 10);
+color: rgb(183,71,42);
+	color:rgb(43,87,154);
+  }
+
+QTabWidget#tabWidgetMenuBar QTabBar::tab:hover:!selected {
+     background:rgba(0,0,0,40);
+  }
+
+
+
+ QTabWidget#tabWidgetMenuBar QTabBar::tab:selected {
+      border-color: #9B9B9B;
+      border-bottom-color: #C2C7CB; /* same as pane color */
+  }
+
+  QTabWidget#tabWidgetMenuBar QTabBar::tab:!selected {
+      margin-top: 0px; /* make non-selected tabs look smaller */
+  }
+
+
+QMenu {
+
+    border: 1px solid rgb(226,241,250);
+}
+ 
+QMenu::item {
+    background-color: transparent;
+    padding:3px 25px;
+    margin:0px 2px;
+	color:rgb(240,240,240);
+	font-weight:bold;
+}
+QMenu::item:selected { 
+    background-color: #999999;
+}
+
+
+QPushButton#pushButtonStyle,QPushButton#pushButtonMinTab,QPushButton#pushButtonMaxTab,QPushButton#pushButtonClose,QPushButton#pushButtonFullScreen,QPushButton#pushButtonMinimum{
+	background:transparent;
+	font-weight:bold;
+	margin:0px;
+	border:0px solid #fff;
+	outline:none;
+}
+
+QPushButton#pushButtonFullScreen:hover,QPushButton#pushButtonMinimum:hover,QPushButton#pushButtonMaxTab:hover{
+	background:rgba(0,0,0,40);
+}
+
+QPushButton#pushButtonFullScreen:pressed,QPushButton#pushButtonMinimum:pressed,QPushButton#pushButtonMaxTab:pressed{
+	background:rgba(0,0,0,80);
+	padding-top:3px;
+}
+
+QPushButton#pushButtonClose:hover{
+	background:rgba(232,17,35,255);
+}
+
+QPushButton#pushButtonClose:pressed{
+	background:rgba(232,17,35,200);
+}
+
+QPushButton#pushButtonMinTab,QPushButton#pushButtonMaxTab{
+	color: rgb(112, 112, 112);
+}
+
+QPushButton#pushButtonMinTab:hover,QPushButton#pushButtonMaxTab:hover{
+	background:rgb(177,177,177);
+}
+
+QPushButton::menu-indicator {
+      image: none;
+      subcontrol-origin: padding;
+      subcontrol-position: bottom right;
+  }
+ 
+</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10,0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutTitleBar" stretch="0,0,0,0,0,0">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>100</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelIcon">
+          <property name="text">
+           <string>icon</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelTitle">
+          <property name="text">
+           <string>这是标题</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonStyle">
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>黑体</family>
+            <pointsize>16</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 16pt &quot;黑体&quot;;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>23</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonMinimum">
+          <property name="minimumSize">
+           <size>
+            <width>46</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>―</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonFullScreen">
+          <property name="minimumSize">
+           <size>
+            <width>46</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>☐</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonClose">
+          <property name="minimumSize">
+           <size>
+            <width>46</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>×</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="1">
+         <widget class="QWidget" name="widgetMenuBar_2" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>34</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>34</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <widget class="QPushButton" name="pushButtonMaxTab">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>10</y>
+             <width>24</width>
+             <height>14</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>14</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>24</width>
+             <height>14</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>⮟</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QWidget" name="widgetMenuBar" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">.QWidget{
+background: rgb(243,243,243);
+border-left:1px solid gray;
+}</string>
+          </property>
+          <widget class="QPushButton" name="pushButtonMinTab">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>60</y>
+             <width>24</width>
+             <height>14</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>14</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>24</width>
+             <height>14</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>⮝</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="0" rowspan="2">
+         <widget class="QTabWidget" name="tabWidgetMenuBar">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>34</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>6666</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideNone</enum>
+          </property>
+          <property name="tabBarAutoHide">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>File</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QToolButton" name="toolButton_4">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>open</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../../../workspace/UMVision/UMVision/icon/folder-open.png</normaloff>../../../../workspace/UMVision/UMVision/icon/folder-open.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::MenuButtonPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>true</bool>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_5">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>paste</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../../../workspace/UMVision/UMVision/icon/paste.png</normaloff>../../../../workspace/UMVision/UMVision/icon/paste.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::MenuButtonPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>true</bool>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line">
+              <property name="minimumSize">
+               <size>
+                <width>1</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>1</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-color:rgb(177,177,177);
+background-color:rgb(177,177,177);
+color:rgb(177,177,177);
+width:2px;</string>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_7">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>exit</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../../../../workspace/UMVision/UMVision/icon/close.png</normaloff>../../../../workspace/UMVision/UMVision/icon/close.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::DelayedPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>true</bool>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>903</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>Edit</string>
+           </attribute>
+          </widget>
+          <widget class="ToolPage" name="Tool">
+           <attribute name="title">
+            <string>Tool</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_4">
+           <attribute name="title">
+            <string>View</string>
+           </attribute>
+          </widget>
+          <widget class="ConfigPage" name="tab_5">
+           <attribute name="title">
+            <string>configuration</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+          </widget>
+          <widget class="QWidget" name="tab_6">
+           <attribute name="title">
+            <string>Help</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetBottomBar" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>1</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ToolPage</class>
+   <extends>QWidget</extends>
+   <header location="global">ToolPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ConfigPage</class>
+   <extends>QWidget</extends>
+   <header location="global">ConfigPage.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
