@@ -13,6 +13,7 @@
 #include "LevelAdjustPlugin.h"
 #include "CollimatorPlugin.h"
 #include "GradienterPlugin.h"
+#include "FilterWheelPlugin.h"
 
 Gen2WGMTFTester::Gen2WGMTFTester(QWidget* parent)
     : QMainWindow(parent)
@@ -264,6 +265,16 @@ void Gen2WGMTFTester::CreateTabBar()
     GradienterPlugin* gradPlugin = PluginCore::getinstance()->GetPlugin<GradienterPlugin>("GradienterPlugin");
     if (gradPlugin && tabBarPlugin)
         tabBarPlugin->addWidget(gradPlugin->GetWidget(), "Gradienter", QIcon());
+
+    FilterWheelPlugin* filterWheelPlugin = PluginCore::getinstance()->GetPlugin<FilterWheelPlugin>("FilterWheelPlugin");
+    if (filterWheelPlugin && tabBarPlugin)
+    {
+        std::list<std::string> configPath;
+        configPath.push_back("E:\\pluginDemo\\Gen2WGMTFTester\\FilterWheel\\FilterConfig.json");
+        configPath.push_back("E:\\pluginDemo\\Gen2WGMTFTester\\FilterWheel\\RXFilterConfig.json");
+        filterWheelPlugin->InitConfig(configPath);
+        tabBarPlugin->addWidget(filterWheelPlugin->GetWidget(), "Gradienter", QIcon());
+    }
 }
 
 void Gen2WGMTFTester::mousePressEvent(QMouseEvent* event)

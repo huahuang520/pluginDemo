@@ -1,0 +1,94 @@
+{
+	"FilterMap":[
+	{
+		"Enable": true,
+		"Type": "FilterWheel",
+		"Name": "ND",
+		"Protocol": "modbus/serial",
+		"MotorType": "Oriental/AZ",
+		"Port": "COM3",
+		"Station": 1,
+		"SerialInfo":{
+			"BaudRate": 115200,
+			"ByteSize": 8,
+			"Parity": "Even",
+			"StopBit": "OneStop",
+			"FlowControl": "None"
+		},
+		"PositionList":[
+			{
+				"Channel": 0,
+				"Name": "ND0",
+				"Enum": "ND0"
+			},
+			{
+				"Channel": 1,
+				"Name": "ND1",
+				"Enum": "ND1"
+			},
+			{
+				"Channel": 2,
+				"Name": "ND2",
+				"Enum": "ND2"
+			}
+		],
+		"IOCommand":{
+			"Enable": false,
+			"start": 5,
+			"zHome": 6,
+			"stop": 7,
+			"alarmRst": 8
+		}
+	},
+	{
+		"Enable": true,
+		"Type": "FilterWheel",
+		"Name": "XYZ",
+		"Protocol": "modbus/serial",
+		"MotorType": "Oriental/AZ",
+		"Port": "COM3",
+		"Station": 1,
+		"SerialInfo":{
+			"BaudRate": 115200,
+			"ByteSize": 8,
+			"Parity": "Even",
+			"StopBit": "OneStop",
+			"FlowControl": "None"
+		},
+		"PositionList":[
+			{
+				"Name": "X",
+				"Enum": "X",
+				"Channel": 0
+			},
+			{
+				"Name": "Y",
+				"Enum": "Y",
+				"Channel": 1
+			},
+			{
+				"Name": "Z",
+				"Enum": "Z",
+				"Channel": 2
+			},
+			{
+				"Name": "Empty",
+				"Enum": "Empty",
+				"Channel": 3
+			},
+			{
+				"Name": "Block",
+				"Enum": "Block",
+				"Channel": 4
+			}
+		],
+		"IOCommand":{
+			"Enable": false,
+			"start": 5,
+			"zHome": 6,
+			"stop": 7,
+			"alarmRst": 8
+		}
+	}
+	]
+}

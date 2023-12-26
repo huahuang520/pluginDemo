@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FilterWheelWidgetClass</class>
+ <widget class="QWidget" name="FilterWheelWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>477</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FilterWheelWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QPushButton" name="openPort">
+            <property name="text">
+             <string>open</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="closePort">
+            <property name="text">
+             <string>close</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="title">
+        <string>status</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>ConnectStatus:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="connectStatus">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>MoveStatus:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="MoveStatus">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>NDFilter</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QComboBox" name="NDList">
+          <property name="styleSheet">
+           <string notr="true">/***************   QComboBox  ******************/
+ 
+QComboBox{
+    border-left: 1px solid rgb(195,195,195);
+    border-right: 1px solid rgb(195,195,195);
+   background: rgb(124,124,124);
+    color:white;
+    selection-background-color:rgb(80,52,158);
+    combobox-popup: 0;
+}
+QComboBox:editable{
+    color:white;
+    font:20px;
+}
+QComboBox:enabled{
+    border: 1px solid rgba(195,195,195,0);
+    selection-background-color:rgb(80,52,158);
+}
+QComboBox QAbstractItemView{ /*下拉框的显示框效果*/
+    border:1px solid rgb(195,195,195);
+    border:2px;
+}
+QComboBox::item:hover{
+    background-color:rgb(195,195,195);
+}
+ 
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 15px;
+    height:15px;
+    padding:5px;
+    border-radius:3px;
+    border-right-color: rgb(195,195,195);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(255,255, 255, 155), stop:0.3 rgba(160,160,164,155),
+    stop:0.7 rgba(160,160,164,155), stop:1 rgba(255,255, 255, 155));
+}
+QComboBox::down-arrow {
+    image: url(&quot;:/FilterWheel/image/down_arrow.png&quot;);
+    width: 15px;
+    height:15px;
+    border-radius:5px;
+ 
+ 
+}
+QComboBox::down-arrow:hover{
+    border-image: url(&quot;:/FilterWheel/image/down_arrow.png&quot;);
+    width: 20px;
+    height:20px;
+    border-radius:5px;
+    background:white;
+}
+QComboBox::down-arrow:on {
+    top: 0px;
+    left: 0px;
+}
+ 
+/**************   QComboBox 定制 ****************/
+QComboBox QAbstractItemView
+{
+    padding:5px;
+    background:rgb(51,51,51);
+}
+QComboBox QAbstractItemView::item
+{
+    margin:1px 0;
+    padding:5px;
+    font-size:15px;
+    background:rgb(60,60,60);
+    color:#fff;
+    font-family:&quot;Microsoft YaHei&quot;;
+}
+QComboBox QAbstractItemView::item:hover
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(127,127, 127, 255), stop:0.3 rgba(106,106,106,255),
+    stop:0.7 rgba(82,82,82,255), stop:1 rgba(82,82, 82, 255));
+    border-radius:2px;
+}
+ 
+QComboBox QAbstractItemView::item:selected
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(127,127, 127, 255), stop:0.3 rgba(106,106,106,255),
+    stop:0.7 rgba(82,82,82,255), stop:1 rgba(82,82, 82, 255));
+    border-radius:2px;
+}
+
+
+
+/******** combobox 滚动条美化  *********/
+QComboBox QScrollBar::vertical{ /*主体部分*/
+    width:10px;
+    background:rgb(89,89,89);
+    border:none;
+    border-radius:5px;
+}
+QComboBox QScrollBar::handle::vertical{ /*滑块主体*/
+    border-radius:5px;
+    width: 10px;
+    background:rgb(173,173,173);
+}
+QComboBox QScrollBar::handle::vertical::hover{
+    background:rgb(232,232,232);
+}
+QComboBox QScrollBar::add-line::vertical{/*上箭头*/
+    border:none;
+}
+QComboBox QScrollBar::sub-line::vertical{/*下箭头*/
+    border:none;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>XYZFilter</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QComboBox" name="XYZList">
+          <property name="styleSheet">
+           <string notr="true">/***************   QComboBox  ******************/
+ 
+QComboBox{
+    border-left: 1px solid rgb(195,195,195);
+    border-right: 1px solid rgb(195,195,195);
+   background: rgb(124,124,124);
+    color:white;
+    selection-background-color:rgb(80,52,158);
+    combobox-popup: 0;
+}
+QComboBox:editable{
+    color:white;
+    font:20px;
+}
+QComboBox:enabled{
+    border: 1px solid rgba(195,195,195,0);
+    selection-background-color:rgb(80,52,158);
+}
+QComboBox QAbstractItemView{ /*下拉框的显示框效果*/
+    border:1px solid rgb(195,195,195);
+    border:2px;
+}
+QComboBox::item:hover{
+    background-color:rgb(195,195,195);
+}
+ 
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 15px;
+    height:15px;
+    padding:5px;
+    border-radius:3px;
+    border-right-color: rgb(195,195,195);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(255,255, 255, 155), stop:0.3 rgba(160,160,164,155),
+    stop:0.7 rgba(160,160,164,155), stop:1 rgba(255,255, 255, 155));
+}
+QComboBox::down-arrow {
+    image: url(&quot;:/FilterWheel/image/down_arrow.png&quot;);
+    width: 15px;
+    height:15px;
+    border-radius:5px;
+ 
+ 
+}
+QComboBox::down-arrow:hover{
+    border-image: url(&quot;:/FilterWheel/image/down_arrow.png&quot;);
+    width: 20px;
+    height:20px;
+    border-radius:5px;
+    background:white;
+}
+QComboBox::down-arrow:on {
+    top: 0px;
+    left: 0px;
+}
+ 
+/**************   QComboBox 定制 ****************/
+QComboBox QAbstractItemView
+{
+    padding:5px;
+    background:rgb(51,51,51);
+}
+QComboBox QAbstractItemView::item
+{
+    margin:1px 0;
+    padding:5px;
+    font-size:15px;
+    background:rgb(60,60,60);
+    color:#fff;
+    font-family:&quot;Microsoft YaHei&quot;;
+}
+QComboBox QAbstractItemView::item:hover
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(127,127, 127, 255), stop:0.3 rgba(106,106,106,255),
+    stop:0.7 rgba(82,82,82,255), stop:1 rgba(82,82, 82, 255));
+    border-radius:2px;
+}
+ 
+QComboBox QAbstractItemView::item:selected
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(127,127, 127, 255), stop:0.3 rgba(106,106,106,255),
+    stop:0.7 rgba(82,82,82,255), stop:1 rgba(82,82, 82, 255));
+    border-radius:2px;
+}
+
+
+
+/******** combobox 滚动条美化  *********/
+QComboBox QScrollBar::vertical{ /*主体部分*/
+    width:10px;
+    background:rgb(89,89,89);
+    border:none;
+    border-radius:5px;
+}
+QComboBox QScrollBar::handle::vertical{ /*滑块主体*/
+    border-radius:5px;
+    width: 10px;
+    background:rgb(173,173,173);
+}
+QComboBox QScrollBar::handle::vertical::hover{
+    background:rgb(232,232,232);
+}
+QComboBox QScrollBar::add-line::vertical{/*上箭头*/
+    border:none;
+}
+QComboBox QScrollBar::sub-line::vertical{/*下箭头*/
+    border:none;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="title">
+        <string>RxFilter</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,0,1,3">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QComboBox" name="RxList">
+          <property name="styleSheet">
+           <string notr="true">/***************   QComboBox  ******************/
+ 
+QComboBox{
+    border-left: 1px solid rgb(195,195,195);
+    border-right: 1px solid rgb(195,195,195);
+   background: rgb(124,124,124);
+    color:white;
+    selection-background-color:rgb(80,52,158);
+    combobox-popup: 0;
+}
+QComboBox:editable{
+    color:white;
+    font:20px;
+}
+QComboBox:enabled{
+    border: 1px solid rgba(195,195,195,0);
+    selection-background-color:rgb(80,52,158);
+}
+QComboBox QAbstractItemView{ /*下拉框的显示框效果*/
+    border:1px solid rgb(195,195,195);
+    border:2px;
+}
+QComboBox::item:hover{
+    background-color:rgb(195,195,195);
+}
+ 
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 15px;
+    height:15px;
+    padding:5px;
+    border-radius:3px;
+    border-right-color: rgb(195,195,195);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(255,255, 255, 155), stop:0.3 rgba(160,160,164,155),
+    stop:0.7 rgba(160,160,164,155), stop:1 rgba(255,255, 255, 155));
+}
+QComboBox::down-arrow {
+    image: url(&quot;:/FilterWheel/image/down_arrow.png&quot;);
+    width: 15px;
+    height:15px;
+    border-radius:5px;
+ 
+ 
+}
+QComboBox::down-arrow:hover{
+    border-image: url(&quot;:/FilterWheel/image/down_arrow.png&quot;);
+    width: 20px;
+    height:20px;
+    border-radius:5px;
+    background:white;
+}
+QComboBox::down-arrow:on {
+    top: 0px;
+    left: 0px;
+}
+ 
+/**************   QComboBox 定制 ****************/
+QComboBox QAbstractItemView
+{
+    padding:5px;
+    background:rgb(51,51,51);
+}
+QComboBox QAbstractItemView::item
+{
+    margin:1px 0;
+    padding:5px;
+    font-size:15px;
+    background:rgb(60,60,60);
+    color:#fff;
+    font-family:&quot;Microsoft YaHei&quot;;
+}
+QComboBox QAbstractItemView::item:hover
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(127,127, 127, 255), stop:0.3 rgba(106,106,106,255),
+    stop:0.7 rgba(82,82,82,255), stop:1 rgba(82,82, 82, 255));
+    border-radius:2px;
+}
+ 
+QComboBox QAbstractItemView::item:selected
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(127,127, 127, 255), stop:0.3 rgba(106,106,106,255),
+    stop:0.7 rgba(82,82,82,255), stop:1 rgba(82,82, 82, 255));
+    border-radius:2px;
+}
+
+
+
+/******** combobox 滚动条美化  *********/
+QComboBox QScrollBar::vertical{ /*主体部分*/
+    width:10px;
+    background:rgb(89,89,89);
+    border:none;
+    border-radius:5px;
+}
+QComboBox QScrollBar::handle::vertical{ /*滑块主体*/
+    border-radius:5px;
+    width: 10px;
+    background:rgb(173,173,173);
+}
+QComboBox QScrollBar::handle::vertical::hover{
+    background:rgb(232,232,232);
+}
+QComboBox QScrollBar::add-line::vertical{/*上箭头*/
+    border:none;
+}
+QComboBox QScrollBar::sub-line::vertical{/*下箭头*/
+    border:none;
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="setRxAxis">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>setRxAxis</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="axisEdit"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
